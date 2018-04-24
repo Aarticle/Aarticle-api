@@ -78,6 +78,7 @@ module.exports = (app) => {
         // User not found
 
         return res.render('auth/login0.handlebars');
+        res.send(user)
       }
       // Check the password
       user.comparePassword(password, (err, isMatch) => {
