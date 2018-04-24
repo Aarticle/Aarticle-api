@@ -10,12 +10,19 @@
   "author": "Elliot Briant, Phyllis Wong, Joe Rezendez, Savan Kaur",
   "license": "MIT",
   "dependencies": {
+    "bcrypt": "^2.0.1",
     "body-parser": "^1.18.2",
     "cookie-parser": "^1.4.3",
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "express-handlebars": "^3.0.0",
+    "express-recaptcha": "^4.0.2",
     "jsonwebtoken": "^8.2.1",
-    "path": "^0.12.7"
+    "method-override": "^2.3.10",
+    "mongodb": "^3.0.7",
+    "mongoose": "^5.0.16",
+    "nodemon": "^1.17.3",
+    "path": "^0.12.7",
+    "request": "^2.85.0"
   }
 }
