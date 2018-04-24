@@ -11,7 +11,7 @@ const UserSchema = new Schema({
   comments        : [{ type: Schema.Types.ObjectId, ref: 'Comment', required: true}],
   admin           : { type: Boolean, default: false },
   banned          : { type : Boolean, default: false },
-  group           : { type: String }
+  group           : { type : String }
 });
 
 UserSchema.pre('save', function(next) {

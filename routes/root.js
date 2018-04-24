@@ -20,6 +20,18 @@ module.exports = (app) => {
       })
 
 
+      app.get('/page2', (req, res) => {
+
+        if (req.user) {
+          User.findById(req.user._id, (err, user) => {
+              res.render('page2.handlebars', {currentUser: user});
+            })
+        } else {
+            res.render('page2.handlebars');
+            }
+          })
+
+
 
 
 }//modules.exports
