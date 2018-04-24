@@ -19,7 +19,6 @@ module.exports = (app) => {
   app.post('/sign-up/', (req, res) => {
       // Create User and JWT
       // const user = new User(req.body);
-      recaptcha.verify(req, function(error, data) {
 
           User.findOne({
               username: req.body.username
@@ -30,8 +29,7 @@ module.exports = (app) => {
                   // Username taken
                   return res.render('auth/sign-up0.handlebars');
 
-              } else if (!error) {
-                  //captcha filled
+              }
                   // make a user with username and Password
                   let userData = {...req.body}
                   let newUser = new User(userData)
@@ -52,13 +50,8 @@ module.exports = (app) => {
                           err: err
                       });
                   });
-              } else {
-                  //captcha not filled
-                  res.render('auth/sign-up1.handlebars');
-               }
+              })
           });
-      })
-  });
 
   // LOGOUT
   app.get('/logout', (req, res) => {
