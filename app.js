@@ -65,6 +65,8 @@ app.use(checkAuth);
 require('./routes/root.js')(app);
 require('./routes/auth.js')(app);
 require('./routes/article.js')(app);
+require('./routes/mobileAuth.js')(app);
+
 
 const port = process.env.PORT || 3000
 
