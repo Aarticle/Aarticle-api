@@ -3,15 +3,17 @@
 {{#if currentUser}}
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
+      <div class="articleFormBox">
       <form method="POST" action="/article/post">
 
         {{> articles-form}}
         <!-- BUTTON -->
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">Submit Article</button>
+        <center>  <button class="btn btn-primary" type="submit">Submit Article</button></center>
           <br><br>
         </div
       </form>
+    </div>
     </div>
   </div>
   <br />

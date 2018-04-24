@@ -20,10 +20,10 @@ module.exports = (app) => {
   // CREATE ARTICLE
   app.post('/article/post', (req, res) => {
     let newArticle = new Article(req.body);
-    newArticle.username = req.user.username;
+    // newArticle.username = req.user.username;
     newArticle.save((err,article) => {
        if(err) throw err;
-       res.redirect('back');
+       res.redirect('/article/' + article._id);
      })
    })
 
@@ -32,19 +32,16 @@ module.exports = (app) => {
   // SHOW ARTICLE PAGE
   app.get('/article/:id', (req, res) => {
 
-    const findArticle = req.params.id;
-
     let currentUser;
     if (req.user) {
         User.findById(req.user._id, (err, user) => {
-      Article.findById(req.params.id).then((article) => {
-        res.render('article-show', {findArticle, article: article, currentUser: user});
+        Article.findById(req.params.id).then((article) => {
+        res.render('article-show', {article, currentUser: user});
        })
      })
      } else {
        Article.findById(req.params.id).then((article) => {
-
-       res.render('article-show', {article: article, currentUser: user});
+       res.render('article-show', {article, currentUser: user});
      })
      }
  })

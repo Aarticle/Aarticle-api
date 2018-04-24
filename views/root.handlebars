@@ -10,3 +10,15 @@
   <h3>You must log in to create an article</h3>
   {{/if}}
 </div>
+
+<div class="articlesCont">
+
+
+{{#each article}}
+<div class="articleBox2">
+<a href="/article/{{this._id}}">{{this.title}}</a>
+<p>By: {{this.username}}</p>
+</div>
+{{/each}}
+
+</div>

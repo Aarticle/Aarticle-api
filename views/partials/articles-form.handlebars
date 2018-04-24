@@ -1,12 +1,13 @@
 <!-- views/reviews-edit.handlebars -->
 
   <fieldset>
+    <center>
     <legend class="whiteout">Create New Article</legend>
     <p class="whiteout">Fill out this form to create a new article!</p>
     <!-- TITLE -->
     <div class="form-group">
       <label class="whiteout" for="review-title">Title</label><br>
-      <input required id="title"  type="text" name="title" value="{{article.title}}"/>
+      <input class="formInput" required id="title"  type="text" name="title" value="{{article.title}}"/>
     </div>
 
 
@@ -16,10 +17,11 @@
     <!-- DESCRIPTION -->
     <div class="form-group">
       <label class="whiteout" for="content">Content</label><br>
-      <textarea required id="review-description" name="content" rows="10" />{{article.content}}</textarea>
+      <textarea class="formInput2" required id="review-description" name="content" rows="10" />{{article.content}}</textarea>
     </div>
 
     <br>
 
 
   </fieldset>
+</center>

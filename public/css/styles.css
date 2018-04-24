@@ -19,6 +19,48 @@
   color: white;
 }
 
+
+.articlesCont {
+  position: absolute;
+  top: 30rem;
+  left: 0; right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.articleBox2 {
+  width: 30%;
+  border: solid 1px black;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(52, 73, 94,1.0);
+  color: white;
+}
+
+.articleBox2 a {
+  padding-top: 1rem;
+  font-size: 120%;
+  color: rgba(52, 152, 219,1.0);
+}
+
+.articlebox2 a:hover {
+  color: rgba(52, 152, 219,1.0);
+  text-decoration: none;
+}
+
+.articleBox2 p {
+  padding-bottom: 1rem;
+}
+
+
 .CTA {
   background: #3498db;
   color: white;
@@ -43,4 +85,70 @@
 .articleFormBox {
   background: rgba(52, 73, 94,1.0);
   width: auto;
+  color: white;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(52,73,94,.3);
+  transition: all 200ms;
+}
+
+/*.articleFormBox:hover {
+  box-shadow: 0 40px 80px rgba(52,73,94,1);
+}*/
+
+.formInput {
+  width: 40rem;
+  color: black;
+  transition: all 200ms;
+}
+
+
+.formInput2 {
+  width: 40rem;
+  color: black;
+  transition: all 200ms;
+}
+
+
+.whiteout {
+  color: white;
+}
+
+.articleContent {
+  background: linear-gradient(rgba(236, 240, 241,.7), rgba(189, 195, 199,.3));
+  font-size: 125%;
+  width: 80%;
+  white-space: pre-line;
+}
+
+.prelined {
+  white-space: pre-line;
+}
+
+.articleContent h1 {
+}
+
+.articleBox p {
+  padding-left: 3rem;
+  text-align: left;
+}
+
+.articleBox h1 {
+  margin-top: 0px;
+  padding-left: 3rem;
+  text-align: left;
+}
+
+
+.articleBox h3 {
+  margin-top: 0px;
+  padding-left: 3rem;
+  text-align: left;
+}
+
+.articleBox {
+  white-space: pre-line;
+  width: 80%;
+  border: solid 1px black;
+  border-radius: 8px;
 }

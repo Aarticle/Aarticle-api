@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const User = require('../models/user');
-
+const Article = require('../models/article');
 
 
 
@@ -12,13 +12,16 @@ module.exports = (app) => {
 
     if (req.user) {
       User.findById(req.user._id, (err, user) => {
-          res.render('root.handlebars', {currentUser: user});
+        Article.find({}).then((article) => {
+          res.render('root.handlebars', {currentUser: user, article});
+
+        })
         })
     } else {
         res.render('root.handlebars');
         }
       })
- 
+
 
       app.get('/page2', (req, res) => {
 
