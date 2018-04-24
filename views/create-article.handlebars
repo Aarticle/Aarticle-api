@@ -1,0 +1,21 @@
+
+<a style="margin-left: 2rem;" class="whiteout" href="/">Back to Home</a>
+{{#if currentUser}}
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <form method="POST" action="/article/post">
+
+        {{> articles-form}}
+        <!-- BUTTON -->
+        <div class="form-group">
+          <button class="btn btn-primary" type="submit">Submit Article</button>
+          <br><br>
+        </div
+      </form>
+    </div>
+  </div>
+  <br />
+  <br />
+{{else}}
+<h1 class="whiteout" align="center">You must be logged in to post an Article.</h1>
+{{/if}}

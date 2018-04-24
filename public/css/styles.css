@@ -1,0 +1,46 @@
+.rootBody {
+  background: #ecf0f1;
+}
+
+
+.section1 {
+  background: #34495e;
+  width: 60rem;
+  position: absolute;
+  top: 70px;
+  left: 0; right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 12px;
+  color: white;
+}
+
+.CTA {
+  background: #3498db;
+  color: white;
+  padding-top: 1rem; padding-bottom: 1rem;
+  padding-left: 5rem; padding-right: 5rem;
+  font-size: 120%;
+  border-radius: 20px;
+  transition: all 200ms;
+  margin-bottom: 1rem;
+}
+
+.CTA:hover {
+  text-decoration: none;
+  color: white;
+  background: rgba(72, 172, 239,1.0)
+}
+
+.section1 p {
+  margin-bottom: 1rem;
+}
+
+.articleFormBox {
+  background: rgba(52, 73, 94,1.0);
+  width: auto;
+}

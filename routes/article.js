@@ -3,11 +3,24 @@ const Article = require('../models/article');
 
 module.exports = (app) => {
 
+  //CREATE ARTICLE PAGE
+  app.get('/new-article', (req, res) => {
+
+    if (req.user) {
+      User.findById(req.user._id, (err, user) => {
+          res.render('create-article.handlebars', {currentUser: user});
+        })
+    } else {
+        res.render('create-article.handlebars');
+        }
+      })
+
+
+
   // CREATE ARTICLE
-  app.post('/articals/:id/post', (req, res) => {
+  app.post('/article/post', (req, res) => {
     let newArticle = new Article(req.body);
     newArticle.username = req.user.username;
-    newArticle.ip = req.connection.remoteAddress;
     newArticle.save((err,article) => {
        if(err) throw err;
        res.redirect('back');
@@ -16,48 +29,39 @@ module.exports = (app) => {
 
 
 
-//   // SHOW REPORT PAGE
-//   app.get('/article/:id', (req, res) => {
-//
-//     const findPerson = req.params.id;
-//
-//
-//     let currentUser;
-//     if (req.user) {
-//         User.findById(req.user._id, (err, user) => {
-//       Report.find({student : req.params.id}).then((reports) => {
-//         res.render('reports-show', {findPerson, reports: reports, currentUser: user});
-//        })
-//      })
-//      } else {
-//        res.redirect('back')
-//      }
-//  })
-//
-//
-//
-// // DELETE REPORT
-// app.delete('/reports/:id', function (req, res) {
-//   console.log("DELETE report")
-//   Report.findByIdAndRemove(req.body.reportId).then((report) => {
-//     res.redirect('back');
-//   }).catch((err) => {
-//     // ???
-//     console.log(err.message);
-//   })
-// })
-//
-// // DELETE ASSIGNMENT
-// app.delete('/assignments/:id', function (req, res) {
-//   console.log("DELETE assignment")
-//   Assignment.findByIdAndRemove(req.body.assignmentId).then((assignment) => {
-//     res.redirect('back');
-//   }).catch((err) => {
-//     // ???
-//     console.log(err.message);
-//   })
-// })
-//
+  // SHOW ARTICLE PAGE
+  app.get('/article/:id', (req, res) => {
+
+    const findArticle = req.params.id;
+
+    let currentUser;
+    if (req.user) {
+        User.findById(req.user._id, (err, user) => {
+      Article.findById(req.params.id).then((article) => {
+        res.render('article-show', {findArticle, article: article, currentUser: user});
+       })
+     })
+     } else {
+       Article.findById(req.params.id).then((article) => {
+
+       res.render('article-show', {article: article, currentUser: user});
+     })
+     }
+ })
+
+
+
+// DELETE ARTICLE
+app.delete('/article/:id', function (req, res) {
+  console.log("DELETE article")
+  Article.findByIdAndRemove(req.body.articleId).then((article) => {
+    res.redirect('back');
+  }).catch((err) => {
+    console.log(err.message);
+  })
+})
+
+
 
 
 } //modules.exports

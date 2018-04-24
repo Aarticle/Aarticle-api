@@ -43,7 +43,7 @@ module.exports = (app) => {
                          maxAge: 9000000,
                          httpOnly: true
                      });
-                     res.redirect('/');
+                     res.send(token);
                   }).catch((err) => {
                       console.log(err.message);
                       return res.status(400).send({

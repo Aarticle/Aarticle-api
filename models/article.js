@@ -8,6 +8,7 @@ const articleSchema = mongoose.Schema({
   imageurl: String,
   ip: String,
   student : String,
+  username : String,
   studentId: { type: Schema.Types.ObjectId, ref: 'User' },
   date : String,
   comments : [{}]
