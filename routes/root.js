@@ -18,7 +18,7 @@ module.exports = (app) => {
         res.render('root.handlebars');
         }
       })
-
+ 
 
       app.get('/page2', (req, res) => {
 
