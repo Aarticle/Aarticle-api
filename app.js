@@ -30,7 +30,7 @@ app.use(bodyParser.json());
 
 var mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/2b2tonline', {  });
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/aarticle', {  });
 
 
 // override with POST having ?_method=DELETE or ?_method=PUT
@@ -71,6 +71,7 @@ app.use(checkAuth);
 
 //ROUTES
 require('./routes/root.js')(app);
+require('./routes/auth.js')(app);
 
 const port = process.env.PORT || 3000
 

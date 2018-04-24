@@ -1,1 +1,105 @@
-<h1>Aarticle</h1>
+<!-- views/partials/navbar.handlebars -->
+
+<div class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- <div class="sello"> -->
+      <a class="sello" href="/">Aarticle</a>
+    <!-- </div> -->
+      {{#if currentUser.admin}}
+        <a style="margin-left: 10rem;" href="/admin" class="btn navbar-btn"><i class="glyphicon glyphicon-globe"></i> Admin</a>
+      {{/if}}
+    <div class="pull-right">
+      {{#if currentUser}}
+        <a class="btn navbar-btn" href="/logout">Logout <i class="glyphicon glyphicon-log-out"></i></a>
+      {{else}}
+        <a class="btn navbar-btn" href="/login">Login <i class="glyphicon glyphicon-log-in"></i></a>
+        <a class="btn navbar-btn" href="/sign-up">Sign Up <i class="glyphicon glyphicon-plus-sign"></i></a>
+      {{/if}}
+    </div>
+    </div>
+  </div>
+
+
+<style>
+
+.container-fluid {
+  /*display: flex;*/
+  /*flex-direction: row;*/
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.container-fluid a {
+  justify-self: flex-end;
+}
+
+.totheright {
+  float: right;
+}
+
+.sello {
+  position: absolute;
+  top: 25%;
+  color: white;
+  text-decoration: none;
+  font-size: 1.8rem;
+  transition: all 200ms;
+  display: inline-block;
+  align-items: center;
+  align-self: center;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.sello:hover {
+  color: gold;
+  text-decoration: none;
+  transform: scale(1.08);
+}
+
+
+.navbar-default {
+  background: #2c3e50;
+  border: none;
+  border-radius: 0px;
+  z-index: 20;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,.4);
+}
+
+.navbar-default .navbar-brand {
+  color: white;
+}
+
+
+.navbar-btn {
+  color: white;
+  transition: all 200ms;
+}
+
+.navbar-btn:hover {
+transform: scale(1.1);
+color: #f1c40f;
+}
+
+@media (max-width:900px) and (min-width:300px) {
+
+
+nav a {
+  display: inline-block;
+}
+
+.navbar-header {
+  width: 2rem;
+}
+
+.navbar-default {
+}
+
+
+
+
+
+</style>

@@ -3,9 +3,9 @@ require('dotenv').config();
 const User = require('../models/user');
 const jwt = require('jsonwebtoken');
 
-var Recaptcha = require('express-recaptcha');
-//import Recaptcha from 'express-recaptcha'
-var recaptcha = new Recaptcha('6LciD0EUAAAAAMSM4b2xRawGOzSD0ke7mlaY-ZpQ', '6LciD0EUAAAAAH4H4CCH0EwKcfbDlQPdMUQe0SFO');
+// var Recaptcha = require('express-recaptcha');
+// //import Recaptcha from 'express-recaptcha'
+// var recaptcha = new Recaptcha('6LciD0EUAAAAAMSM4b2xRawGOzSD0ke7mlaY-ZpQ', '6LciD0EUAAAAAH4H4CCH0EwKcfbDlQPdMUQe0SFO');
 
 
 module.exports = (app) => {
