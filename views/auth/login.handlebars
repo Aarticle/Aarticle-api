@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="/sign-up.css">
+
+<body class="sign-up">
+  <style>
+  .authBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(41, 128, 185,.95);
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,.3);
+    padding: 0px;
+    width: 40rem;
+    padding-bottom: 10px;
+  }
+
+  .authBox h3 {
+    margin-top: 5px;
+  }
+</style>
+<center>
+  <div class="authBox">
+    <h3 align="center" class="whiteout">Log in</h3>
+    <form method="POST" action="/login">
+      <label class="whiteout" for="username">Username:</label>
+      <input placeholder="username" name="username"><br>
+      <label class="whiteout" for="password">Password:</label>
+      <input placeholder="password" type="password" name="password"><br><br>
+      <input class="btn btn-success" type="submit" value="Login">
+    </form>
+  </div>
+</center>
