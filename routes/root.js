@@ -18,7 +18,9 @@ module.exports = (app) => {
         })
         })
     } else {
-        res.render('root.handlebars');
+        Article.find({}).then((article) => {
+        res.render('root.handlebars', {article});
+      })
         }
       })
 
