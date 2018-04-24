@@ -48,11 +48,11 @@
 .articleBox2 a {
   padding-top: 1rem;
   font-size: 120%;
-  color: rgba(52, 152, 219,1.0);
+  color: powderblue;
 }
 
-.articlebox2 a:hover {
-  color: rgba(52, 152, 219,1.0);
+.articleBox2 a:hover {
+  color: powderblue;
   text-decoration: none;
 }
 
