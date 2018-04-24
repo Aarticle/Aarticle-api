@@ -44,12 +44,15 @@ module.exports = (app) => {
                          httpOnly: true
                      });
                      res.redirect('/');
-                     res.json(newUser)
+                    // res.json(user)
+                     //console.log(newUser)
                   }).catch((err) => {
                       console.log(err.message);
                       return res.status(400).send({
                           err: err
-                      });
+                      }).then((res) => {
+                        res.json(newUser)
+                      })
                   });
               })
           });
