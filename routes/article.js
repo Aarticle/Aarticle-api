@@ -41,7 +41,7 @@ module.exports = (app) => {
      })
      } else {
        Article.findById(req.params.id).then((article) => {
-       res.render('article-show', {article, currentUser: user});
+       res.render('article-show', {article});
      })
      }
  })
